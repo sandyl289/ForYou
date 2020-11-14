@@ -10,6 +10,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JLabel;
 
 public class ForYouApp extends JFrame {
 
@@ -42,6 +46,12 @@ public class ForYouApp extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
+		lblWelcome.setForeground(new Color(0, 206, 209));
+		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 54));
+		lblWelcome.setBounds(298, 43, 769, 101);
+		contentPane.add(lblWelcome);
+		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1370, 750);
@@ -51,19 +61,5 @@ public class ForYouApp extends JFrame {
 		setLocationRelativeTo(null);
 		
 		setTitle("For You ~~");
-		
-		JButton enterButton = new JButton("Enter");
-		enterButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				System.out.println("Enter button pressed");
-			}
-		});
-		enterButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		enterButton.setBounds(164, 618, 97, 25);
-		contentPane.add(enterButton);
 	}
 }
