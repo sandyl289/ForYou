@@ -46,6 +46,11 @@ public class ForYouApp extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
+		lblWelcome.setForeground(new Color(0, 206, 209));
+		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 54));
+		lblWelcome.setBounds(298, 43, 769, 101);
+		contentPane.add(lblWelcome);
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
