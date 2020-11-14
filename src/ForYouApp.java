@@ -50,6 +50,8 @@ public class ForYouApp extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		setTitle("For You ~~");
+		
 		JButton enterButton = new JButton("Enter");
 		enterButton.addMouseListener(new MouseAdapter() {
 			@Override
