@@ -90,6 +90,7 @@ public class Quote extends JFrame {
 		arrayOptions[41] = "Watch a TEDtalk";
 		
 		txtAreaQuote = new JTextArea();
+		txtAreaQuote.setEditable(false);
 		txtAreaQuote.setWrapStyleWord(true);
 		txtAreaQuote.setLineWrap(true);
 		txtAreaQuote.setBackground(new Color(219, 246, 233));
