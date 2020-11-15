@@ -14,7 +14,7 @@ public class Quote extends JFrame {
 
 	private JPanel contentPane;
 	private String name;
-	String[] quotesArray = new String[20]; 
+	String[] arrayOptions = new String[20]; 
 	/**
 	 * Launch the application.
 	 */
@@ -44,26 +44,26 @@ public class Quote extends JFrame {
 		contentPane.setLayout(null);
 		
 		//QUOTES
-		quotesArray[0] ="“I have chosen to be happy because it is good for my health.” - Voltaire";
-		quotesArray[1] ="“The body is like a piano, and happiness is like music. It is needful to have the instrument in good order.” – Henry Ward Beecher";
-		quotesArray[2] =" “A healthy attitude is contagious but don’t wait to catch it from others. Be a carrier.” – Tom Stoppard";
-		quotesArray[3] ="“The groundwork for all happiness is good health.” – Leigh Hunt";
-		quotesArray[4] ="“I hate every minute of training. But I said, don’t quit. Suffer now and live the rest of your life as a champion.” – Mohammad Ali";
-		quotesArray[5] ="“We do not stop exercising because we grow old – we grow old because we stop exercising.” - Dr. Kenneth Cooper";
-		quotesArray[6] ="“What most people don’t realize is that food is not just calories: It’s information. It actually contains messages that communicate to every cell in the body.” - Dr. Mark Hyman";
-		quotesArray[7] ="“To eat is a necessity, but to eat intelligently is an art.” - Francois La Rochefoucauld";
-		quotesArray[8] ="“Healthy citizens are the greatest asset any country can have.” - Winston Churchill";
-		quotesArray[9] ="“It is health that is real wealth and not pieces of gold and silver.” - Mahatma Gandhi";
-		quotesArray[10] ="“Self-esteem is as important to our well-being as legs are to a table. It is essential for physical and mental health and for happiness.” - Louise Hart";
-		quotesArray[11] ="“You are the only one who can limit your greatness.” - Unknown";
-		quotesArray[12] ="“So many people spend their health gaining wealth, and then have to spend their wealth to regain their health.” - A.J. Reb Materi";
-		quotesArray[13] ="“It’s never too late and you’re never too old to become better.” - Unknown";
-		quotesArray[14] ="“Happiness is the highest form of health.” - Dalai Lama";
-		quotesArray[15] ="“If you think wellness is expensive, try illness.” - Unknown";
-		quotesArray[16] ="“Deep breathing is our nervous system’s love language.” - Dr. Lauren Fogel Mersy";
-		quotesArray[17] ="“Sleep is that golden chain that ties health and our bodies together.” - Thomas Dekker";
-		quotesArray[18] ="“Our bodies are our gardens – our wills are our gardeners.” - William Shakespeare";
-		quotesArray[19] ="“We are such stuff as dreams are made on, and our little life is rounded with a sleep.” - William Shakespeare";
+		arrayOptions[0] ="“I have chosen to be happy because it is good for my health.” - Voltaire";
+		arrayOptions[1] ="“The body is like a piano, and happiness is like music. It is needful to have the instrument in good order.” – Henry Ward Beecher";
+		arrayOptions[2] =" “A healthy attitude is contagious but don’t wait to catch it from others. Be a carrier.” – Tom Stoppard";
+		arrayOptions[3] ="“The groundwork for all happiness is good health.” – Leigh Hunt";
+		arrayOptions[4] ="“I hate every minute of training. But I said, don’t quit. Suffer now and live the rest of your life as a champion.” – Mohammad Ali";
+		arrayOptions[5] ="“We do not stop exercising because we grow old – we grow old because we stop exercising.” - Dr. Kenneth Cooper";
+		arrayOptions[6] ="“What most people don’t realize is that food is not just calories: It’s information. It actually contains messages that communicate to every cell in the body.” - Dr. Mark Hyman";
+		arrayOptions[7] ="“To eat is a necessity, but to eat intelligently is an art.” - Francois La Rochefoucauld";
+		arrayOptions[8] ="“Healthy citizens are the greatest asset any country can have.” - Winston Churchill";
+		arrayOptions[9] ="“It is health that is real wealth and not pieces of gold and silver.” - Mahatma Gandhi";
+		arrayOptions[10] ="“Self-esteem is as important to our well-being as legs are to a table. It is essential for physical and mental health and for happiness.” - Louise Hart";
+		arrayOptions[11] ="“You are the only one who can limit your greatness.” - Unknown";
+		arrayOptions[12] ="“So many people spend their health gaining wealth, and then have to spend their wealth to regain their health.” - A.J. Reb Materi";
+		arrayOptions[13] ="“It’s never too late and you’re never too old to become better.” - Unknown";
+		arrayOptions[14] ="“Happiness is the highest form of health.” - Dalai Lama";
+		arrayOptions[15] ="“If you think wellness is expensive, try illness.” - Unknown";
+		arrayOptions[16] ="“Deep breathing is our nervous system’s love language.” - Dr. Lauren Fogel Mersy";
+		arrayOptions[17] ="“Sleep is that golden chain that ties health and our bodies together.” - Thomas Dekker";
+		arrayOptions[18] ="“Our bodies are our gardens – our wills are our gardeners.” - William Shakespeare";
+		arrayOptions[19] ="“We are such stuff as dreams are made on, and our little life is rounded with a sleep.” - William Shakespeare";
 		
 		
 		JTextArea txtAreaQuote = new JTextArea();
@@ -85,7 +85,7 @@ public class Quote extends JFrame {
 		int upperBoundExcluded =20;
 		int i = random.nextInt(upperBoundExcluded-lowerBound) + lowerBound;
 		
-		return quotesArray[i];
+		return arrayOptions[i];
 	}
 
 	public void setName(String name) {
