@@ -127,8 +127,7 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 		contentPane.add(txtAreaQuote);
 
 		//lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
-
-
+		
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
@@ -182,17 +181,19 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 		case "Quote":
 			txtAreaQuote.setText(getRandomQuote());
 			setTitle("Quote");
-			
+			refreshImage();
 			break;
 
 		case "Challenge":
 			txtAreaQuote.setText(getRandomChallenge());
 			setTitle("Challenge");
+			refreshImage();
 			break;
 
 		case "Random":
 			txtAreaQuote.setText(getRandom());
 			setTitle("Random");
+			refreshImage();
 			break;
 		}
 	}
@@ -206,9 +207,11 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 			objEcout.modeHome(true);
 		}
 	}
-	
-	void update() {
-		
-	}
 
+	private void refreshImage() {
+		lblRocks = new JLabel(getRandomImage());
+		lblRocks.setBounds(297, 418, 653, 259);
+		contentPane.add(lblRocks);
+	}
+ 	
 }
