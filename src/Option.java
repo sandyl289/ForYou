@@ -33,6 +33,8 @@ public class Option extends JFrame {
 	private JLabel lblFengShui;
 	private JLabel lblShell;
 	private JLabel lblSky;
+	private String name;
+	private JLabel lblWelcome;
 
 	/**
 	 * Launch the application.
@@ -71,26 +73,26 @@ public class Option extends JFrame {
 		setLocationRelativeTo(null);
 
 		// Option
-		arrayOptions[0] = "“I have chosen to be happy because it is good for my health.” - Voltaire";
-		arrayOptions[1] = "“The body is like a piano, and happiness is like music. It is needful to have the instrument in good order.” – Henry Ward Beecher";
-		arrayOptions[2] = " “A healthy attitude is contagious but don’t wait to catch it from others. Be a carrier.” – Tom Stoppard";
-		arrayOptions[3] = "“The groundwork for all happiness is good health.” – Leigh Hunt";
-		arrayOptions[4] = "“I hate every minute of training. But I said, don’t quit. Suffer now and live the rest of your life as a champion.” – Mohammad Ali";
-		arrayOptions[5] = "“We do not stop exercising because we grow old – we grow old because we stop exercising.” - Dr. Kenneth Cooper";
-		arrayOptions[6] = "“What most people don’t realize is that food is not just calories: It’s information. It actually contains messages that communicate to every cell in the body.” - Dr. Mark Hyman";
-		arrayOptions[7] = "“To eat is a necessity, but to eat intelligently is an art.” - Francois La Rochefoucauld";
-		arrayOptions[8] = "“Healthy citizens are the greatest asset any country can have.” - Winston Churchill";
-		arrayOptions[9] = "“It is health that is real wealth and not pieces of gold and silver.” - Mahatma Gandhi";
-		arrayOptions[10] = "“Self-esteem is as important to our well-being as legs are to a table. It is essential for physical and mental health and for happiness.” - Louise Hart";
-		arrayOptions[11] = "“You are the only one who can limit your greatness.” - Unknown";
-		arrayOptions[12] = "“So many people spend their health gaining wealth, and then have to spend their wealth to regain their health.” - A.J. Reb Materi";
-		arrayOptions[13] = "“It’s never too late and you’re never too old to become better.” - Unknown";
-		arrayOptions[14] = "“Happiness is the highest form of health.” - Dalai Lama";
-		arrayOptions[15] = "“If you think wellness is expensive, try illness.” - Unknown";
-		arrayOptions[16] = "“Deep breathing is our nervous system’s love language.” - Dr. Lauren Fogel Mersy";
-		arrayOptions[17] = "“Sleep is that golden chain that ties health and our bodies together.” - Thomas Dekker";
-		arrayOptions[18] = "“Our bodies are our gardens – our wills are our gardeners.” - William Shakespeare";
-		arrayOptions[19] = "“We are such stuff as dreams are made on, and our little life is rounded with a sleep.” - William Shakespeare";
+		arrayOptions[0] = "â€œI have chosen to be happy because it is good for my health.â€ - Voltaire";
+		arrayOptions[1] = "â€œThe body is like a piano, and happiness is like music. It is needful to have the instrument in good order.â€ â€“ Henry Ward Beecher";
+		arrayOptions[2] = " â€œA healthy attitude is contagious but donâ€™t wait to catch it from others. Be a carrier.â€ â€“ Tom Stoppard";
+		arrayOptions[3] = "â€œThe groundwork for all happiness is good health.â€ â€“ Leigh Hunt";
+		arrayOptions[4] = "â€œI hate every minute of training. But I said, donâ€™t quit. Suffer now and live the rest of your life as a champion.â€ â€“ Mohammad Ali";
+		arrayOptions[5] = "â€œWe do not stop exercising because we grow old â€“ we grow old because we stop exercising.â€ - Dr. Kenneth Cooper";
+		arrayOptions[6] = "â€œWhat most people donâ€™t realize is that food is not just calories: Itâ€™s information. It actually contains messages that communicate to every cell in the body.â€ - Dr. Mark Hyman";
+		arrayOptions[7] = "â€œTo eat is a necessity, but to eat intelligently is an art.â€ - Francois La Rochefoucauld";
+		arrayOptions[8] = "â€œHealthy citizens are the greatest asset any country can have.â€ - Winston Churchill";
+		arrayOptions[9] = "â€œIt is health that is real wealth and not pieces of gold and silver.â€ - Mahatma Gandhi";
+		arrayOptions[10] = "â€œSelf-esteem is as important to our well-being as legs are to a table. It is essential for physical and mental health and for happiness.â€ - Louise Hart";
+		arrayOptions[11] = "â€œYou are the only one who can limit your greatness.â€ - Unknown";
+		arrayOptions[12] = "â€œSo many people spend their health gaining wealth, and then have to spend their wealth to regain their health.â€ - A.J. Reb Materi";
+		arrayOptions[13] = "â€œItâ€™s never too late and youâ€™re never too old to become better.â€ - Unknown";
+		arrayOptions[14] = "â€œHappiness is the highest form of health.â€ - Dalai Lama";
+		arrayOptions[15] = "â€œIf you think wellness is expensive, try illness.â€ - Unknown";
+		arrayOptions[16] = "â€œDeep breathing is our nervous systemâ€™s love language.â€ - Dr. Lauren Fogel Mersy";
+		arrayOptions[17] = "â€œSleep is that golden chain that ties health and our bodies together.â€ - Thomas Dekker";
+		arrayOptions[18] = "â€œOur bodies are our gardens â€“ our wills are our gardeners.â€ - William Shakespeare";
+		arrayOptions[19] = "â€œWe are such stuff as dreams are made on, and our little life is rounded with a sleep.â€ - William Shakespeare";
 		arrayOptions[20] = "Call a friend/family member";
 		arrayOptions[21] = "Read a new book";
 		arrayOptions[22] = "Take a bike ride";
@@ -114,6 +116,7 @@ public class Option extends JFrame {
 		arrayOptions[40] = "Write a letter to a friend";
 		arrayOptions[41] = "Watch a TEDtalk";
 
+		lblWelcome = new JLabel("");
 		txtAreaQuote = new JTextArea();
 		txtAreaQuote.setEditable(false);
 		txtAreaQuote.setWrapStyleWord(true);
@@ -158,6 +161,8 @@ public class Option extends JFrame {
 		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		btnBack.setBounds(1066, 630, 97, 25);
 		contentPane.add(btnBack);
+
+	
 
 	}
 
@@ -284,4 +289,11 @@ public class Option extends JFrame {
 		}
 	}
 
+	public void setName(String name) {
+		lblWelcome.setText("Welcome " + name +"! \\(^u^)/");
+		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 22));
+		lblWelcome.setForeground(new Color(49, 50, 111));
+		lblWelcome.setBounds(46, 29, 449, 59);
+		contentPane.add(lblWelcome);
+	}
 }
