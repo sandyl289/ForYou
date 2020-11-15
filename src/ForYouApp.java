@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class ForYouApp extends JFrame {
 
@@ -23,6 +25,7 @@ public class ForYouApp extends JFrame {
 
 	// Add window quote
 	private Quote windowQuote;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -54,7 +57,7 @@ public class ForYouApp extends JFrame {
 		windowQuote = new Quote();
 
 		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
-		lblWelcome.setForeground(new Color(0, 206, 209));
+		lblWelcome.setBackground(new Color(157,223,211));
 		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 54));
 		lblWelcome.setBounds(298, 43, 769, 101);
 		contentPane.add(lblWelcome);
@@ -68,6 +71,7 @@ public class ForYouApp extends JFrame {
 		setLocationRelativeTo(null);
 
 		setTitle("For You ~~");
+		contentPane.setBackground(new Color(219,246,233));
 
 		JButton enterButton = new JButton("Enter");
 		enterButton.addMouseListener(new MouseAdapter() {
@@ -102,5 +106,26 @@ public class ForYouApp extends JFrame {
 		lblNewLabel.setForeground(new Color(0, 206, 209));
 		lblNewLabel.setBounds(54, 235, 416, 75);
 		contentPane.add(lblNewLabel);
+		
+		JRadioButton rdbtnQuote = new JRadioButton("Quote");
+		buttonGroup.add(rdbtnQuote);
+		rdbtnQuote.setBounds(298, 481, 109, 23);
+		contentPane.add(rdbtnQuote);
+		
+		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
+		buttonGroup.add(rdbtnChallenge);
+		rdbtnChallenge.setBounds(610, 481, 109, 23);
+		contentPane.add(rdbtnChallenge);
+		
+		JRadioButton rdbtnRandom = new JRadioButton("Random");
+		buttonGroup.add(rdbtnRandom);
+		rdbtnRandom.setBounds(916, 481, 109, 23);
+		contentPane.add(rdbtnRandom);
+		
+		JLabel lblNewLabel_1 = new JLabel("What would you like to receive today?");
+		lblNewLabel_1.setForeground(new Color(153, 204, 255));
+		lblNewLabel_1.setFont(new Font("Century Gothic", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(171, 385, 417, 44);
+		contentPane.add(lblNewLabel_1);
 	}
 }
