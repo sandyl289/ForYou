@@ -19,6 +19,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import interfaces.OptionListener;
+
 public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;

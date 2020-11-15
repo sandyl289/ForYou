@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
+import interfaces.OptionListener;
+
 public class Option extends JFrame {
 
 	private JPanel contentPane;
@@ -26,7 +28,7 @@ public class Option extends JFrame {
 	String[] arrayOptions = new String[42];
 	private JTextArea txtAreaQuote;
 	private JLabel lblRocks;
-
+ImageIcon[] imagesArray = new ImageIcon[6];
 	/**
 	 * Launch the application.
 	 */
@@ -106,7 +108,15 @@ public class Option extends JFrame {
 		arrayOptions[39] = "No devices in the bedroom";
 		arrayOptions[40] = "Write a letter to a friend";
 		arrayOptions[41] = "Watch a TEDtalk";
+		
+		imagesArray[0] = new ImageIcon("image/beach.jpg");
+		imagesArray[1] = new ImageIcon("image/evening.jpg");
+		imagesArray[2] = new ImageIcon("image/feng-shui.jpg");
+		imagesArray[3] = new ImageIcon("image/rocks.jpg");
+		imagesArray[4] = new ImageIcon("image/shell.jpg");
+		imagesArray[5] = new ImageIcon("image/sky.jpg");
 
+		
 		txtAreaQuote = new JTextArea();
 		txtAreaQuote.setEditable(false);
 		txtAreaQuote.setWrapStyleWord(true);
@@ -116,9 +126,8 @@ public class Option extends JFrame {
 		txtAreaQuote.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		contentPane.add(txtAreaQuote);
 
-		lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
-		lblRocks.setBounds(297, 418, 653, 259);
-		contentPane.add(lblRocks);
+		//lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
+
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
@@ -130,6 +139,15 @@ public class Option extends JFrame {
 		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		btnBack.setBounds(1066, 630, 97, 25);
 		contentPane.add(btnBack);
+	}
+
+	private ImageIcon getRandomImage() {
+		Random random = new Random();
+		int lowerBound = 0;
+		int upperBoundExcluded = 6;
+		int i = random.nextInt(upperBoundExcluded - lowerBound) + lowerBound;
+
+		return imagesArray[i];
 	}
 
 	private String getRandom() {
@@ -164,6 +182,7 @@ public class Option extends JFrame {
 		case "Quote":
 			txtAreaQuote.setText(getRandomQuote());
 			setTitle("Quote");
+			
 			break;
 
 		case "Challenge":
