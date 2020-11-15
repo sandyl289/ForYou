@@ -29,9 +29,6 @@ public class ForYouApp extends JFrame {
 	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
-	// Variable link to the listener
-	private ArrayList<OptionListener> listeEcouteurs = new ArrayList<OptionListener>();
-
 	/**
 	 * Launch the application.
 	 */
