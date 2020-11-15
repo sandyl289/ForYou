@@ -1,6 +1,8 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -52,6 +54,14 @@ public class Option extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1370, 750);
+		Dimension ecranDimension = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation(ecranDimension.width / 2 - getSize().width / 2, ecranDimension.height / 2 - getSize().height / 2);
+
+		setLocationRelativeTo(null);
 
 		// Option
 		arrayOptions[0] = "“I have chosen to be happy because it is good for my health.” - Voltaire";
