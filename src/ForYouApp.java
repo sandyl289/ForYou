@@ -79,7 +79,7 @@ public class ForYouApp extends JFrame {
 		enterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String nom = txtEnterYourName.getText();
-				JOptionPane.showMessageDialog(null, "Welcome " + nom + " :) ~~~ !");
+				JOptionPane.showMessageDialog(null, "Welcome " + nom + "! \n☆＊:,（●´∀｀）人（´∀｀●）・:＊☆");
 
 				if (!windowQuote.isVisible()) {
 					windowQuote.setVisible(true);
@@ -93,11 +93,11 @@ public class ForYouApp extends JFrame {
 
 		txtEnterYourName = new JTextField();
 		txtEnterYourName.setForeground(new Color(0, 206, 209));
-		txtEnterYourName.setBounds(349, 264, 150, 25);
+		txtEnterYourName.setBounds(407, 264, 333, 25);
 		contentPane.add(txtEnterYourName);
 		txtEnterYourName.setColumns(10);
 
-		JLabel lblNewLabel = new JLabel("Hello! :)  What is your name?");
+		JLabel lblNewLabel = new JLabel("Hello! \\(^-^)/  What is your name?");
 		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		lblNewLabel.setForeground(new Color(0, 206, 209));
 		lblNewLabel.setBounds(54, 235, 416, 75);
