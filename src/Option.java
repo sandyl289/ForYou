@@ -1,23 +1,26 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class Option extends JFrame {
 
 	private JPanel contentPane;
-	private String name;
 	private String optionName;
+
+	// Variable liee entre l'interaction des classes Normal et App23SpiderMan
+	private ArrayList<OptionListener> listListener = new ArrayList<OptionListener>();
 
 	String[] arrayOptions = new String[42];
 	private JTextArea txtAreaQuote;
@@ -106,12 +109,12 @@ public class Option extends JFrame {
 		JLabel lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
 		lblRocks.setBounds(297, 418, 653, 259);
 		contentPane.add(lblRocks);
-		
+
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				System.out.println("Back Button pushed.");
+				leverModeAccueil();
 			}
 		});
 		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
@@ -131,7 +134,7 @@ public class Option extends JFrame {
 	private String getRandomChallenge() {
 		Random random = new Random();
 		int lowerBound = 20;
-		int upperBoundExcluded = 43;
+		int upperBoundExcluded = 42;
 		int i = random.nextInt(upperBoundExcluded - lowerBound) + lowerBound;
 
 		return arrayOptions[i];
@@ -165,11 +168,18 @@ public class Option extends JFrame {
 		}
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getOptionName() {
 		return this.optionName;
 	}
+
+	public void addOptionListener(OptionListener objEcout) {
+		listListener.add(objEcout);
+	}
+
+	private void leverModeAccueil() {
+		for (OptionListener objEcout : listListener) {
+			objEcout.modeHome(true);
+		}
+	}
+
 }

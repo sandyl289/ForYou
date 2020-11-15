@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -23,9 +24,13 @@ public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterYourName;
+
 	// Add window option
 	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	// Variable link to the listener
+	private ArrayList<OptionListener> listeEcouteurs = new ArrayList<OptionListener>();
 
 	/**
 	 * Launch the application.
@@ -155,6 +160,25 @@ public class ForYouApp extends JFrame {
 		JLabel lblNewLabel = new JLabel(new ImageIcon("image/plane.jpg"));
 		lblNewLabel.setBounds(1010, 154, 252, 301);
 		contentPane.add(lblNewLabel);
+
+		windowOption.addOptionListener(new OptionListener() {
+
+			/**
+			 * Methode servant a changer en mode accueil quand l'utilisateur le veut
+			 */
+			@Override
+			public void modeHome(boolean modeHome) {
+				if (modeHome) {
+					windowHome();
+				}
+			}
+		});
+
+	}
+
+	private void windowHome() {
+		windowOption.dispose();
+		setVisible(true);
 	}
 
 }
