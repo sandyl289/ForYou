@@ -162,7 +162,6 @@ public class Option extends JFrame {
 		btnBack.setBounds(1066, 630, 97, 25);
 		contentPane.add(btnBack);
 
-	
 
 	}
 
