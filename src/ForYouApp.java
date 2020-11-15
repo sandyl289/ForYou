@@ -77,6 +77,11 @@ public class ForYouApp extends JFrame {
 		contentPane.add(enterButton);
 		
 		txtEnterYourName = new JTextField();
+		txtEnterYourName.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		txtEnterYourName.setForeground(new Color(0, 206, 209));
 		txtEnterYourName.setText("Enter your name");
 		txtEnterYourName.setBounds(351, 263, 150, 25);
