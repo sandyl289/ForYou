@@ -26,7 +26,6 @@ public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterYourName;
-
 	// Add window quote
 	private Quote windowQuote;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -57,7 +56,7 @@ public class ForYouApp extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(219,246,233));
-		
+
 		// Creation de la fenetre secondaire de l'auteur
 		windowQuote = new Quote();
 
@@ -88,9 +87,10 @@ public class ForYouApp extends JFrame {
 		});
 		enterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String nom = txtEnterYourName.getText();
-				JOptionPane.showMessageDialog(null, "Welcome " + nom + "! \n☆＊:,（●´∀｀）人（´∀｀●）・:＊☆");
-
+				String name = txtEnterYourName.getText();
+				windowQuote.setName(name);
+				JOptionPane.showMessageDialog(null, "Welcome " + name + "! \n☆＊:,（●´∀｀）人（´∀｀●）・:＊☆");
+				
 				if (!windowQuote.isVisible()) {
 					windowQuote.setVisible(true);
 					setVisible(false);
@@ -112,38 +112,38 @@ public class ForYouApp extends JFrame {
 		lblName.setForeground(new Color(49, 50, 111));
 		lblName.setBounds(54, 235, 416, 75);
 		contentPane.add(lblName);
-		
+
 		JRadioButton rdbtnQuote = new JRadioButton("Quote");
 		rdbtnQuote.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnQuote.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnQuote);
 		rdbtnQuote.setBounds(298, 481, 109, 23);
 		contentPane.add(rdbtnQuote);
-		
+
 		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnChallenge.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnChallenge);
 		rdbtnChallenge.setBounds(618, 481, 130, 23);
 		contentPane.add(rdbtnChallenge);
-		
+
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnRandom.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnRandom);
 		rdbtnRandom.setBounds(958, 481, 109, 23);
 		contentPane.add(rdbtnRandom);
-		
+
 		JLabel lblAction = new JLabel("What would you like to receive today?");
 		lblAction.setForeground(new Color(49, 50, 111));
 		lblAction.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		lblAction.setBounds(54, 386, 417, 44);
 		contentPane.add(lblAction);
-		
+
 		JLabel lblNewLabel = new JLabel(new ImageIcon("image/plane.jpg"));
 		lblNewLabel.setBounds(1010, 154, 252, 301);
 		contentPane.add(lblNewLabel);
 	}
-	
-	
+
+
 }
