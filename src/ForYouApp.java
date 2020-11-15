@@ -30,10 +30,10 @@ public class ForYouApp extends JFrame {
 	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
-	private String optionName;
 	private JRadioButton rdbtnRandom;
 	private JRadioButton rdbtnChallenge;
 	private JRadioButton rdbtnQuote;
+
 	/**
 	 * Launch the application.
 	 */
@@ -99,7 +99,7 @@ public class ForYouApp extends JFrame {
 					windowOption.setVisible(true);
 					setVisible(false);
 				}
-				
+
 				buttonGroup.clearSelection();
 			}
 		});
@@ -135,7 +135,7 @@ public class ForYouApp extends JFrame {
 		rdbtnChallenge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				windowOption.setOption("Challenge");
-				
+
 			}
 		});
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
@@ -180,11 +180,11 @@ public class ForYouApp extends JFrame {
 
 		});
 
-	}
+	}	
 
 	private void windowHome() {
 		windowOption.dispose();
 		setVisible(true);
 	}
-	
+
 }

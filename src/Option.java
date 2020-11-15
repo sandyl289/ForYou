@@ -28,7 +28,11 @@ public class Option extends JFrame {
 	String[] arrayOptions = new String[42];
 	private JTextArea txtAreaQuote;
 	private JLabel lblRocks;
-ImageIcon[] imagesArray = new ImageIcon[6];
+	private JLabel lblBeach;
+	private JLabel lblEvening;
+	private JLabel lblFengShui;
+	private JLabel lblShell;
+	private JLabel lblSky;
 
 	/**
 	 * Launch the application.
@@ -109,26 +113,41 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 		arrayOptions[39] = "No devices in the bedroom";
 		arrayOptions[40] = "Write a letter to a friend";
 		arrayOptions[41] = "Watch a TEDtalk";
-		
-		imagesArray[0] = new ImageIcon("image/beach.jpg");
-		imagesArray[1] = new ImageIcon("image/evening.jpg");
-		imagesArray[2] = new ImageIcon("image/feng-shui.jpg");
-		imagesArray[3] = new ImageIcon("image/rocks.jpg");
-		imagesArray[4] = new ImageIcon("image/shell.jpg");
-		imagesArray[5] = new ImageIcon("image/sky.jpg");
 
-		
 		txtAreaQuote = new JTextArea();
 		txtAreaQuote.setEditable(false);
 		txtAreaQuote.setWrapStyleWord(true);
 		txtAreaQuote.setLineWrap(true);
 		txtAreaQuote.setBackground(new Color(219, 246, 233));
-		txtAreaQuote.setBounds(252, 127, 744, 270);
+		txtAreaQuote.setBounds(252, 127, 744, 169);
 		txtAreaQuote.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		contentPane.add(txtAreaQuote);
 
-		//lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
-		
+		// lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
+		lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
+		lblRocks.setBounds(297, 392, 653, 285);
+		contentPane.add(lblRocks);
+
+		lblBeach = new JLabel(new ImageIcon("image/beach.jpg"));
+		lblBeach.setBounds(297, 418, 653, 259);
+		contentPane.add(lblBeach);
+
+		lblEvening = new JLabel(new ImageIcon("image/evening.jpg"));
+		lblEvening.setBounds(297, 418, 653, 259);
+		contentPane.add(lblEvening);
+
+		lblFengShui = new JLabel(new ImageIcon("image/feng-shui.jpg"));
+		lblFengShui.setBounds(297, 418, 653, 259);
+		contentPane.add(lblFengShui);
+
+		lblShell = new JLabel(new ImageIcon("image/shell.jpg"));
+		lblShell.setBounds(297, 418, 653, 259);
+		contentPane.add(lblShell);
+
+		lblSky = new JLabel(new ImageIcon("image/sky.jpg"));
+		lblSky.setBounds(297, 418, 653, 259);
+		contentPane.add(lblSky);
+
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
@@ -139,15 +158,71 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		btnBack.setBounds(1066, 630, 97, 25);
 		contentPane.add(btnBack);
+
 	}
 
-	private ImageIcon getRandomImage() {
+	private void getRandomImage() {
 		Random random = new Random();
 		int lowerBound = 0;
 		int upperBoundExcluded = 6;
 		int i = random.nextInt(upperBoundExcluded - lowerBound) + lowerBound;
-System.out.println("inside getRandomImage "+"i: "+i);
-		return imagesArray[i];
+
+		switch (i) {
+		case 0: // display rock
+			lblRocks.setVisible(true);
+			lblBeach.setVisible(false);
+			lblEvening.setVisible(false);
+			lblFengShui.setVisible(false);
+			lblShell.setVisible(false);
+			lblSky.setVisible(false);
+			break;
+
+		case 1: // display beach
+			lblRocks.setVisible(false);
+			lblBeach.setVisible(true);
+			lblEvening.setVisible(false);
+			lblFengShui.setVisible(false);
+			lblShell.setVisible(false);
+			lblSky.setVisible(false);
+			break;
+
+		case 2: // display evening
+			lblRocks.setVisible(false);
+			lblBeach.setVisible(false);
+			lblEvening.setVisible(true);
+			lblFengShui.setVisible(false);
+			lblShell.setVisible(false);
+			lblSky.setVisible(false);
+			break;
+
+		case 3: // display Feng shui
+			lblRocks.setVisible(false);
+			lblBeach.setVisible(false);
+			lblEvening.setVisible(false);
+			lblFengShui.setVisible(true);
+			lblShell.setVisible(false);
+			lblSky.setVisible(false);
+			break;
+
+		case 4: // display shell
+			lblRocks.setVisible(false);
+			lblBeach.setVisible(false);
+			lblEvening.setVisible(false);
+			lblFengShui.setVisible(false);
+			lblShell.setVisible(true);
+			lblSky.setVisible(false);
+			break;
+
+		case 5: // display sky
+			lblRocks.setVisible(false);
+			lblBeach.setVisible(false);
+			lblEvening.setVisible(false);
+			lblFengShui.setVisible(false);
+			lblShell.setVisible(false);
+			lblSky.setVisible(true);
+			break;
+
+		}
 	}
 
 	private String getRandom() {
@@ -182,19 +257,19 @@ System.out.println("inside getRandomImage "+"i: "+i);
 		case "Quote":
 			txtAreaQuote.setText(getRandomQuote());
 			setTitle("Quote");
-			refreshImage();
+			getRandomImage();
 			break;
 
 		case "Challenge":
 			txtAreaQuote.setText(getRandomChallenge());
 			setTitle("Challenge");
-			refreshImage();
+			getRandomImage();
 			break;
 
 		case "Random":
 			txtAreaQuote.setText(getRandom());
 			setTitle("Random");
-			refreshImage();
+			getRandomImage();
 			break;
 		}
 	}
@@ -209,11 +284,4 @@ System.out.println("inside getRandomImage "+"i: "+i);
 		}
 	}
 
-	private void refreshImage() {
-		lblRocks = new JLabel(getRandomImage());
-		lblRocks.setBounds(297, 418, 653, 259);
-		System.out.println("New Image");
-		contentPane.add(lblRocks);
-	}
- 	
 }
