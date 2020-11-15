@@ -78,7 +78,7 @@ public class ForYouApp extends JFrame {
 		setTitle("For You ~~");
 
 		JButton enterButton = new JButton("Enter");
-		enterButton.setBackground(new Color(255, 182, 193));
+		enterButton.setBackground(new Color(255, 218, 218));
 		enterButton.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		enterButton.addMouseListener(new MouseAdapter() {
 			@Override
