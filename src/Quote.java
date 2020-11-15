@@ -14,7 +14,7 @@ public class Quote extends JFrame {
 
 	private JPanel contentPane;
 	private String name;
-	String[] arrayOptions = new String[20]; 
+	String[] arrayOptions = new String[42]; 
 	/**
 	 * Launch the application.
 	 */
@@ -64,6 +64,29 @@ public class Quote extends JFrame {
 		arrayOptions[17] ="“Sleep is that golden chain that ties health and our bodies together.” - Thomas Dekker";
 		arrayOptions[18] ="“Our bodies are our gardens – our wills are our gardeners.” - William Shakespeare";
 		arrayOptions[19] ="“We are such stuff as dreams are made on, and our little life is rounded with a sleep.” - William Shakespeare";
+		arrayOptions[20] = "Call a friend/family member";
+		arrayOptions[21] = "Read a new book";
+		arrayOptions[22] = "Take a bike ride";
+		arrayOptions[23] = "Get 8 hours of sleep";
+		arrayOptions[24] = "Listen to music";
+		arrayOptions[25] = "No snacks";
+		arrayOptions[26] = "Run for 10 minutes";
+		arrayOptions[27] = "Listen to music while cooking";
+		arrayOptions[28] = "Wake up 30 minutes earlier";
+		arrayOptions[29] = "Spend 5 minutes meditating";
+		arrayOptions[30] = "Write down 1 goal";
+		arrayOptions[31] = "Drink 1 liter of water";
+		arrayOptions[32] = "No fast food";
+		arrayOptions[33] = "Stand up every hour";
+		arrayOptions[34] = "Write down 5 things that made you happy today";
+		arrayOptions[35] = "Tidy up yourself/your room";
+		arrayOptions[36] = "Eat breakfast";
+		arrayOptions[37] = "Eat 7-9 cups of veggies";
+		arrayOptions[38] = "5 minutes plank";
+		arrayOptions[39] = "No devices in the bedroom";
+		arrayOptions[40] = "Write a letter to a friend";
+		arrayOptions[41] = "Watch a TEDtalk";
+		
 		
 		
 		JTextArea txtAreaQuote = new JTextArea();
@@ -77,6 +100,23 @@ public class Quote extends JFrame {
 
 		setTitle("Quote");
 	
+	}
+	private String getRandom() {
+		Random random = new Random();
+		int lowerBound = 0;
+		int upperBoundExcluded =42;
+		int i = random.nextInt(upperBoundExcluded-lowerBound) + lowerBound;
+		
+		return arrayOptions[i];
+	}
+	
+	private String getRandomChallenge() {
+		Random random = new Random();
+		int lowerBound = 20;
+		int upperBoundExcluded =43;
+		int i = random.nextInt(upperBoundExcluded-lowerBound) + lowerBound;
+		
+		return arrayOptions[i];
 	}
 
 	private String getRandomQuote() {
