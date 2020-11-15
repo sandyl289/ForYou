@@ -20,8 +20,8 @@ public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterYourName;
-	
-	//Add window quote
+
+	// Add window quote
 	private Quote windowQuote;
 
 	/**
@@ -49,27 +49,26 @@ public class ForYouApp extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		//Creation de la fenetre secondaire de l'auteur
+
+		// Creation de la fenetre secondaire de l'auteur
 		windowQuote = new Quote();
 
-		
 		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
 		lblWelcome.setForeground(new Color(0, 206, 209));
 		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 54));
 		lblWelcome.setBounds(298, 43, 769, 101);
 		contentPane.add(lblWelcome);
-		
+
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1370, 750);
 		Dimension ecranDimension = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(ecranDimension.width / 2 - getSize().width / 2, ecranDimension.height / 2 - getSize().height / 2);
-		
+
 		setLocationRelativeTo(null);
-		
+
 		setTitle("For You ~~");
-		
+
 		JButton enterButton = new JButton("Enter");
 		enterButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -80,22 +79,24 @@ public class ForYouApp extends JFrame {
 		enterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String nom = txtEnterYourName.getText();
-				JOptionPane.showMessageDialog(null, "Welcome " + nom + " :) ~~~ !");	
-				if(!windowQuote.isVisible()) {
+				JOptionPane.showMessageDialog(null, "Welcome " + nom + " :) ~~~ !");
+
+				if (!windowQuote.isVisible()) {
 					windowQuote.setVisible(true);
+					setVisible(false);
 				}
 			}
 		});
+
 		enterButton.setBounds(174, 600, 97, 25);
 		contentPane.add(enterButton);
-		
+
 		txtEnterYourName = new JTextField();
 		txtEnterYourName.setForeground(new Color(0, 206, 209));
-		txtEnterYourName.setText("Enter your name");
 		txtEnterYourName.setBounds(349, 264, 150, 25);
 		contentPane.add(txtEnterYourName);
 		txtEnterYourName.setColumns(10);
-		
+
 		JLabel lblNewLabel = new JLabel("Hello! :)  What is your name?");
 		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		lblNewLabel.setForeground(new Color(0, 206, 209));
