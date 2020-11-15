@@ -57,8 +57,8 @@ public class ForYouApp extends JFrame {
 		windowQuote = new Quote();
 
 		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
-		lblWelcome.setBackground(new Color(157,223,211));
-		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 54));
+		lblWelcome.setForeground(new Color(49,50,111));
+		lblWelcome.setFont(new Font("Century Gothic", Font.BOLD | Font.ITALIC, 54));
 		lblWelcome.setBounds(298, 43, 769, 101);
 		contentPane.add(lblWelcome);
 
@@ -92,7 +92,7 @@ public class ForYouApp extends JFrame {
 			}
 		});
 
-		enterButton.setBounds(174, 600, 97, 25);
+		enterButton.setBounds(635, 580, 97, 25);
 		contentPane.add(enterButton);
 
 		txtEnterYourName = new JTextField();
@@ -103,7 +103,7 @@ public class ForYouApp extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("Hello! \\(^-^)/  What is your name?");
 		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 20));
-		lblNewLabel.setForeground(new Color(0, 206, 209));
+		lblNewLabel.setForeground(new Color(49, 50, 111));
 		lblNewLabel.setBounds(54, 235, 416, 75);
 		contentPane.add(lblNewLabel);
 		
@@ -123,9 +123,9 @@ public class ForYouApp extends JFrame {
 		contentPane.add(rdbtnRandom);
 		
 		JLabel lblNewLabel_1 = new JLabel("What would you like to receive today?");
-		lblNewLabel_1.setForeground(new Color(153, 204, 255));
+		lblNewLabel_1.setForeground(new Color(49, 50, 111));
 		lblNewLabel_1.setFont(new Font("Century Gothic", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(171, 385, 417, 44);
+		lblNewLabel_1.setBounds(54, 386, 417, 44);
 		contentPane.add(lblNewLabel_1);
 	}
 }
