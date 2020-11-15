@@ -30,6 +30,10 @@ public class ForYouApp extends JFrame {
 	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
+	private String optionName;
+	private JRadioButton rdbtnRandom;
+	private JRadioButton rdbtnChallenge;
+	private JRadioButton rdbtnQuote;
 	/**
 	 * Launch the application.
 	 */
@@ -95,6 +99,8 @@ public class ForYouApp extends JFrame {
 					windowOption.setVisible(true);
 					setVisible(false);
 				}
+				
+				buttonGroup.clearSelection();
 			}
 		});
 
@@ -113,7 +119,7 @@ public class ForYouApp extends JFrame {
 		lblName.setBounds(54, 235, 416, 75);
 		contentPane.add(lblName);
 
-		JRadioButton rdbtnQuote = new JRadioButton("Quote");
+		rdbtnQuote = new JRadioButton("Quote");
 		rdbtnQuote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				windowOption.setOption("Quote");
@@ -125,10 +131,11 @@ public class ForYouApp extends JFrame {
 		rdbtnQuote.setBounds(298, 481, 109, 23);
 		contentPane.add(rdbtnQuote);
 
-		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
+		rdbtnChallenge = new JRadioButton("Challenge");
 		rdbtnChallenge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				windowOption.setOption("Challenge");
+				
 			}
 		});
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
@@ -137,7 +144,7 @@ public class ForYouApp extends JFrame {
 		rdbtnChallenge.setBounds(618, 481, 130, 23);
 		contentPane.add(rdbtnChallenge);
 
-		JRadioButton rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				windowOption.setOption("Random");
@@ -170,6 +177,7 @@ public class ForYouApp extends JFrame {
 					windowHome();
 				}
 			}
+
 		});
 
 	}
@@ -178,5 +186,5 @@ public class ForYouApp extends JFrame {
 		windowOption.dispose();
 		setVisible(true);
 	}
-
+	
 }

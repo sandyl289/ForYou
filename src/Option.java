@@ -206,5 +206,9 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 			objEcout.modeHome(true);
 		}
 	}
+	
+	void update() {
+		
+	}
 
 }
