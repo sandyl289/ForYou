@@ -114,6 +114,11 @@ public class ForYouApp extends JFrame {
 		contentPane.add(lblName);
 
 		JRadioButton rdbtnQuote = new JRadioButton("Quote");
+		rdbtnQuote.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				windowQuote.setOption("Quote");
+			}
+		});
 		rdbtnQuote.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnQuote.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnQuote);
@@ -121,6 +126,11 @@ public class ForYouApp extends JFrame {
 		contentPane.add(rdbtnQuote);
 
 		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
+		rdbtnChallenge.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				windowQuote.setOption("Challenge");
+			}
+		});
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnChallenge.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnChallenge);
@@ -128,6 +138,11 @@ public class ForYouApp extends JFrame {
 		contentPane.add(rdbtnChallenge);
 
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				windowQuote.setOption("Random");
+			}
+		});
 		rdbtnRandom.setFont(new Font("Century Gothic", Font.PLAIN, 19));
 		rdbtnRandom.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnRandom);
