@@ -29,6 +29,7 @@ public class Option extends JFrame {
 	private JTextArea txtAreaQuote;
 	private JLabel lblRocks;
 ImageIcon[] imagesArray = new ImageIcon[6];
+
 	/**
 	 * Launch the application.
 	 */
@@ -145,7 +146,7 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 		int lowerBound = 0;
 		int upperBoundExcluded = 6;
 		int i = random.nextInt(upperBoundExcluded - lowerBound) + lowerBound;
-
+System.out.println("inside getRandomImage "+"i: "+i);
 		return imagesArray[i];
 	}
 
@@ -211,6 +212,7 @@ ImageIcon[] imagesArray = new ImageIcon[6];
 	private void refreshImage() {
 		lblRocks = new JLabel(getRandomImage());
 		lblRocks.setBounds(297, 418, 653, 259);
+		System.out.println("New Image");
 		contentPane.add(lblRocks);
 	}
  	
