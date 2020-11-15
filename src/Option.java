@@ -9,6 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Option extends JFrame {
 
@@ -103,6 +106,17 @@ public class Option extends JFrame {
 		JLabel lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
 		lblRocks.setBounds(297, 418, 653, 259);
 		contentPane.add(lblRocks);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.out.println("Back Button pushed.");
+			}
+		});
+		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
+		btnBack.setBounds(1066, 630, 97, 25);
+		contentPane.add(btnBack);
 	}
 
 	private String getRandom() {
@@ -158,5 +172,4 @@ public class Option extends JFrame {
 	public String getOptionName() {
 		return this.optionName;
 	}
-
 }

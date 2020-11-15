@@ -23,7 +23,7 @@ public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterYourName;
-	// Add window quote
+	// Add window option
 	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
