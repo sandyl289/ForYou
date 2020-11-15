@@ -128,27 +128,27 @@ public class Option extends JFrame {
 
 		// lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
 		lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
-		lblRocks.setBounds(297, 392, 653, 285);
+		lblRocks.setBounds(297, 370, 653, 285);
 		contentPane.add(lblRocks);
 
 		lblBeach = new JLabel(new ImageIcon("image/beach.jpg"));
-		lblBeach.setBounds(297, 418, 653, 259);
+		lblBeach.setBounds(297, 311, 653, 344);
 		contentPane.add(lblBeach);
 
 		lblEvening = new JLabel(new ImageIcon("image/evening.jpg"));
-		lblEvening.setBounds(297, 418, 653, 259);
+		lblEvening.setBounds(297, 311, 653, 344);
 		contentPane.add(lblEvening);
 
 		lblFengShui = new JLabel(new ImageIcon("image/feng-shui.jpg"));
-		lblFengShui.setBounds(297, 418, 653, 259);
+		lblFengShui.setBounds(297, 285, 653, 370);
 		contentPane.add(lblFengShui);
 
 		lblShell = new JLabel(new ImageIcon("image/shell.jpg"));
-		lblShell.setBounds(297, 418, 653, 259);
+		lblShell.setBounds(297, 285, 653, 370);
 		contentPane.add(lblShell);
 
 		lblSky = new JLabel(new ImageIcon("image/sky.jpg"));
-		lblSky.setBounds(297, 418, 653, 259);
+		lblSky.setBounds(297, 285, 653, 370);
 		contentPane.add(lblSky);
 
 		JButton btnBack = new JButton("Back");
