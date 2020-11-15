@@ -2,11 +2,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 
 public class ForYouApp extends JFrame {
 
@@ -52,7 +56,8 @@ public class ForYouApp extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		contentPane.setBackground(new Color(219,246,233));
+		
 		// Creation de la fenetre secondaire de l'auteur
 		windowQuote = new Quote();
 
@@ -71,9 +76,10 @@ public class ForYouApp extends JFrame {
 		setLocationRelativeTo(null);
 
 		setTitle("For You ~~");
-		contentPane.setBackground(new Color(219,246,233));
 
 		JButton enterButton = new JButton("Enter");
+		enterButton.setBackground(new Color(255, 182, 193));
+		enterButton.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		enterButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -101,31 +107,43 @@ public class ForYouApp extends JFrame {
 		contentPane.add(txtEnterYourName);
 		txtEnterYourName.setColumns(10);
 
-		JLabel lblNewLabel = new JLabel("Hello! \\(^-^)/  What is your name?");
-		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 20));
-		lblNewLabel.setForeground(new Color(49, 50, 111));
-		lblNewLabel.setBounds(54, 235, 416, 75);
-		contentPane.add(lblNewLabel);
+		JLabel lblName = new JLabel("Hello! \\(^-^)/  What is your name?");
+		lblName.setFont(new Font("Century Gothic", Font.PLAIN, 20));
+		lblName.setForeground(new Color(49, 50, 111));
+		lblName.setBounds(54, 235, 416, 75);
+		contentPane.add(lblName);
 		
 		JRadioButton rdbtnQuote = new JRadioButton("Quote");
+		rdbtnQuote.setFont(new Font("Century Gothic", Font.PLAIN, 19));
+		rdbtnQuote.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnQuote);
 		rdbtnQuote.setBounds(298, 481, 109, 23);
 		contentPane.add(rdbtnQuote);
 		
 		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
+		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
+		rdbtnChallenge.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnChallenge);
-		rdbtnChallenge.setBounds(610, 481, 109, 23);
+		rdbtnChallenge.setBounds(618, 481, 130, 23);
 		contentPane.add(rdbtnChallenge);
 		
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom.setFont(new Font("Century Gothic", Font.PLAIN, 19));
+		rdbtnRandom.setBackground(new Color(219,246,233));
 		buttonGroup.add(rdbtnRandom);
-		rdbtnRandom.setBounds(916, 481, 109, 23);
+		rdbtnRandom.setBounds(958, 481, 109, 23);
 		contentPane.add(rdbtnRandom);
 		
-		JLabel lblNewLabel_1 = new JLabel("What would you like to receive today?");
-		lblNewLabel_1.setForeground(new Color(49, 50, 111));
-		lblNewLabel_1.setFont(new Font("Century Gothic", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(54, 386, 417, 44);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblAction = new JLabel("What would you like to receive today?");
+		lblAction.setForeground(new Color(49, 50, 111));
+		lblAction.setFont(new Font("Century Gothic", Font.PLAIN, 20));
+		lblAction.setBounds(54, 386, 417, 44);
+		contentPane.add(lblAction);
+		
+		JLabel lblNewLabel = new JLabel(new ImageIcon("image/plane.jpg"));
+		lblNewLabel.setBounds(1010, 154, 252, 301);
+		contentPane.add(lblNewLabel);
 	}
+	
+	
 }
