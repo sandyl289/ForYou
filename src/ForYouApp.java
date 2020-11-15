@@ -82,12 +82,6 @@ public class ForYouApp extends JFrame {
 		JButton enterButton = new JButton("Enter");
 		enterButton.setBackground(new Color(255, 218, 218));
 		enterButton.setFont(new Font("Century Gothic", Font.PLAIN, 20));
-		enterButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				System.out.println("Enter button pressed");
-			}
-		});
 		enterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = txtEnterYourName.getText();
@@ -111,7 +105,6 @@ public class ForYouApp extends JFrame {
 		contentPane.add(txtEnterYourName);
 		txtEnterYourName.setColumns(10);
 		windowOption.setName(txtEnterYourName.getText());
-		System.out.println(txtEnterYourName.getText());
 
 		JLabel lblName = new JLabel("Hello! \\(^-^)/  What is your name?");
 		lblName.setFont(new Font("Century Gothic", Font.PLAIN, 20));
@@ -135,7 +128,6 @@ public class ForYouApp extends JFrame {
 		rdbtnChallenge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				windowOption.setOption("Challenge");
-
 			}
 		});
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
