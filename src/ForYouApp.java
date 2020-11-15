@@ -13,7 +13,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -93,7 +92,6 @@ public class ForYouApp extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = txtEnterYourName.getText();
 				windowOption.setName(name);
-				
 
 				if (!windowOption.isVisible()) {
 					windowOption.setVisible(true);
@@ -114,7 +112,7 @@ public class ForYouApp extends JFrame {
 		txtEnterYourName.setColumns(10);
 		windowOption.setName(txtEnterYourName.getText());
 		System.out.println(txtEnterYourName.getText());
-		
+
 		JLabel lblName = new JLabel("Hello! \\(^-^)/  What is your name?");
 		lblName.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		lblName.setForeground(new Color(49, 50, 111));
@@ -182,7 +180,7 @@ public class ForYouApp extends JFrame {
 
 		});
 
-	}	
+	}
 
 	private void windowHome() {
 		windowOption.dispose();

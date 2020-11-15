@@ -148,7 +148,7 @@ public class Option extends JFrame {
 		contentPane.add(lblShell);
 
 		lblSky = new JLabel(new ImageIcon("image/sky.jpg"));
-		lblSky.setBounds(297, 237, 653, 418);
+		lblSky.setBounds(297, 240, 653, 472);
 		contentPane.add(lblSky);
 
 		JButton btnBack = new JButton("Back");
@@ -161,7 +161,6 @@ public class Option extends JFrame {
 		btnBack.setFont(new Font("Century Gothic", Font.PLAIN, 20));
 		btnBack.setBounds(1066, 630, 97, 25);
 		contentPane.add(btnBack);
-
 
 	}
 
@@ -289,7 +288,7 @@ public class Option extends JFrame {
 	}
 
 	public void setName(String name) {
-		lblWelcome.setText("Welcome " + name +"! \\(^u^)/");
+		lblWelcome.setText("Welcome " + name + "! \\(^u^)/");
 		lblWelcome.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		lblWelcome.setForeground(new Color(49, 50, 111));
 		lblWelcome.setBounds(46, 29, 449, 59);
