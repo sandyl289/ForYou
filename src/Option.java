@@ -17,13 +17,13 @@ import javax.swing.border.EmptyBorder;
 public class Option extends JFrame {
 
 	private JPanel contentPane;
-	private String optionName;
 
 	// Variable liee entre l'interaction des classes Normal et App23SpiderMan
 	private ArrayList<OptionListener> listListener = new ArrayList<OptionListener>();
 
 	String[] arrayOptions = new String[42];
 	private JTextArea txtAreaQuote;
+	private JLabel lblRocks;
 
 	/**
 	 * Launch the application.
@@ -106,7 +106,7 @@ public class Option extends JFrame {
 		txtAreaQuote.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		contentPane.add(txtAreaQuote);
 
-		JLabel lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
+		lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
 		lblRocks.setBounds(297, 418, 653, 259);
 		contentPane.add(lblRocks);
 
@@ -166,10 +166,6 @@ public class Option extends JFrame {
 			setTitle("Random");
 			break;
 		}
-	}
-
-	public String getOptionName() {
-		return this.optionName;
 	}
 
 	public void addOptionListener(OptionListener objEcout) {
