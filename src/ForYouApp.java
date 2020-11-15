@@ -18,13 +18,13 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-	
+
 public class ForYouApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterYourName;
 	// Add window quote
-	private Quote windowQuote;
+	private Option windowOption;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
@@ -52,13 +52,13 @@ public class ForYouApp extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(219,246,233));
+		contentPane.setBackground(new Color(219, 246, 233));
 
 		// Creation de la fenetre secondaire de l'auteur
-		windowQuote = new Quote();
+		windowOption = new Option();
 
 		JLabel lblWelcome = new JLabel("WELCOME TO OUR PROJECT");
-		lblWelcome.setForeground(new Color(49,50,111));
+		lblWelcome.setForeground(new Color(49, 50, 111));
 		lblWelcome.setFont(new Font("Century Gothic", Font.BOLD | Font.ITALIC, 54));
 		lblWelcome.setBounds(298, 43, 769, 101);
 		contentPane.add(lblWelcome);
@@ -85,11 +85,11 @@ public class ForYouApp extends JFrame {
 		enterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = txtEnterYourName.getText();
-				windowQuote.setName(name);
+				windowOption.setName(name);
 				JOptionPane.showMessageDialog(null, "Welcome " + name + "! \n☆＊:,（●´∀｀）人（´∀｀●）・:＊☆");
-				
-				if (!windowQuote.isVisible()) {
-					windowQuote.setVisible(true);
+
+				if (!windowOption.isVisible()) {
+					windowOption.setVisible(true);
 					setVisible(false);
 				}
 			}
@@ -113,11 +113,11 @@ public class ForYouApp extends JFrame {
 		JRadioButton rdbtnQuote = new JRadioButton("Quote");
 		rdbtnQuote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				windowQuote.setOption("Quote");
+				windowOption.setOption("Quote");
 			}
 		});
 		rdbtnQuote.setFont(new Font("Century Gothic", Font.PLAIN, 19));
-		rdbtnQuote.setBackground(new Color(219,246,233));
+		rdbtnQuote.setBackground(new Color(219, 246, 233));
 		buttonGroup.add(rdbtnQuote);
 		rdbtnQuote.setBounds(298, 481, 109, 23);
 		contentPane.add(rdbtnQuote);
@@ -125,11 +125,11 @@ public class ForYouApp extends JFrame {
 		JRadioButton rdbtnChallenge = new JRadioButton("Challenge");
 		rdbtnChallenge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				windowQuote.setOption("Challenge");
+				windowOption.setOption("Challenge");
 			}
 		});
 		rdbtnChallenge.setFont(new Font("Century Gothic", Font.PLAIN, 19));
-		rdbtnChallenge.setBackground(new Color(219,246,233));
+		rdbtnChallenge.setBackground(new Color(219, 246, 233));
 		buttonGroup.add(rdbtnChallenge);
 		rdbtnChallenge.setBounds(618, 481, 130, 23);
 		contentPane.add(rdbtnChallenge);
@@ -137,11 +137,11 @@ public class ForYouApp extends JFrame {
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				windowQuote.setOption("Random");
+				windowOption.setOption("Random");
 			}
 		});
 		rdbtnRandom.setFont(new Font("Century Gothic", Font.PLAIN, 19));
-		rdbtnRandom.setBackground(new Color(219,246,233));
+		rdbtnRandom.setBackground(new Color(219, 246, 233));
 		buttonGroup.add(rdbtnRandom);
 		rdbtnRandom.setBounds(958, 481, 109, 23);
 		contentPane.add(rdbtnRandom);
@@ -156,6 +156,5 @@ public class ForYouApp extends JFrame {
 		lblNewLabel.setBounds(1010, 154, 252, 301);
 		contentPane.add(lblNewLabel);
 	}
-
 
 }

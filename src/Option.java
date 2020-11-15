@@ -3,12 +3,14 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class Quote extends JFrame {
+public class Option extends JFrame {
 
 	private JPanel contentPane;
 	private String name;
@@ -24,7 +26,7 @@ public class Quote extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Quote frame = new Quote();
+					Option frame = new Option();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +38,7 @@ public class Quote extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Quote() {
+	public Option() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1260, 737);
 		contentPane = new JPanel();
@@ -45,7 +47,7 @@ public class Quote extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// QUOTES
+		// Option
 		arrayOptions[0] = "“I have chosen to be happy because it is good for my health.” - Voltaire";
 		arrayOptions[1] = "“The body is like a piano, and happiness is like music. It is needful to have the instrument in good order.” – Henry Ward Beecher";
 		arrayOptions[2] = " “A healthy attitude is contagious but don’t wait to catch it from others. Be a carrier.” – Tom Stoppard";
@@ -88,18 +90,19 @@ public class Quote extends JFrame {
 		arrayOptions[39] = "No devices in the bedroom";
 		arrayOptions[40] = "Write a letter to a friend";
 		arrayOptions[41] = "Watch a TEDtalk";
-		
+
 		txtAreaQuote = new JTextArea();
 		txtAreaQuote.setEditable(false);
 		txtAreaQuote.setWrapStyleWord(true);
 		txtAreaQuote.setLineWrap(true);
 		txtAreaQuote.setBackground(new Color(219, 246, 233));
-		txtAreaQuote.setBounds(163, 96, 744, 448);
-		txtAreaQuote.setFont(new Font("Century Gothic", Font.PLAIN, 19));
+		txtAreaQuote.setBounds(252, 127, 744, 270);
+		txtAreaQuote.setFont(new Font("Century Gothic", Font.PLAIN, 25));
 		contentPane.add(txtAreaQuote);
 
-		setTitle("Quote");
-
+		JLabel lblRocks = new JLabel(new ImageIcon("image/rocks.jpg"));
+		lblRocks.setBounds(297, 418, 653, 259);
+		contentPane.add(lblRocks);
 	}
 
 	private String getRandom() {
@@ -130,14 +133,20 @@ public class Quote extends JFrame {
 	}
 
 	public void setOption(String optionName) {
-		switch(optionName) {
-			case "Quote" : txtAreaQuote.setText(getRandomQuote());
+		switch (optionName) {
+		case "Quote":
+			txtAreaQuote.setText(getRandomQuote());
+			setTitle("Quote");
 			break;
-			
-			case "Challenge" : txtAreaQuote.setText(getRandomChallenge());
+
+		case "Challenge":
+			txtAreaQuote.setText(getRandomChallenge());
+			setTitle("Challenge");
 			break;
-			
-			case "Random" : txtAreaQuote.setText(getRandom());
+
+		case "Random":
+			txtAreaQuote.setText(getRandom());
+			setTitle("Random");
 			break;
 		}
 	}
@@ -145,7 +154,7 @@ public class Quote extends JFrame {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getOptionName() {
 		return this.optionName;
 	}
